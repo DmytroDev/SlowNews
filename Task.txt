@@ -1,0 +1,23 @@
+Part 1
+1/ создать проект SlowNews, который состоит из 4-х экранов (страниц): логин, регистрация, новости, архив.
+Необходимо придумать дизайн, сверстать его; у каждой новости должна быть картинка, заголовок, тело и кнопка "Сохранить"
+в архив. Сделать к следующему занятию страницу Новостей, на которой должна быть настоящая отрисовка информации из сервлета.
+
+файлы создать все (4xJSP, 4xServlet), форвард прописать, html разметку наверстать полностью
+
+т.е. получится 3 страницы, “замоканные” на уровне html (т.е. разметка никакой логикой не управляется вообще) и 1 страница,
+замоканная на уровне сервлета (разметка управляется логикой, но сервлет отдает фиктивные данные и сам никуда не обращается).
+
+Part 2
+2/ create new jsp-page ("show-users"). Create navigation for this page.
+Create server-side logic for create users which autorized.
+List<Users> create as singleton.
+In servlet realize 2 method for handling GET and POST request.
+
+create handler for registration form.
+
+// TODO: need create later:
+ header.jsp,
+ footer.jsp,
+ left-side-menu
+  and include it into pages.

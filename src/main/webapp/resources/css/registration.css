@@ -1,0 +1,20 @@
+.content-registration {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background: lightgreen;
+    color: darkblue;
+    border: 1px solid #C8C5BA;
+}
+
+.error {
+    margin: 10px;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+h2 {
+  background: lightcoral;
+    color: black;
+}

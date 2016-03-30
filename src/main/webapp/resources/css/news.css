@@ -1,0 +1,47 @@
+.content-wrap {
+    left: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    width: 80%;
+    padding: 5px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.content-concrete-news{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: solid 1px darkgray;
+}
+
+.image-content {
+    width: 15%;
+}
+
+.news-picture {
+    width: 100px;
+    height: 100px;
+}
+
+.news-content {
+    width: 80%;
+    text-align: left;
+}
+
+.news-data {
+
+}
+
+.save-button {
+
+}

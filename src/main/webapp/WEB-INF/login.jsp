@@ -13,7 +13,8 @@
 <div class="content-wrap">
 
     <div class="content-login">
-        <form action="/news" method="GET">
+        <%--<form action="/news" method="GET">--%>
+        <form action="/news" method="POST">
             <h1>Log in</h1>
             UserName
             <input class="username" type="text" name="username">

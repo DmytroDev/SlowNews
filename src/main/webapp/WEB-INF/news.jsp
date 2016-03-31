@@ -9,7 +9,10 @@
 </head>
 <body>
 <div class="header">
-    <p class="header-msg">SlowNews</p>
+    <div class="left-header">SlowNews</div>
+    <div class="right-header">Hello, ${login}</div>
+    <%--<p class="header-msg">SlowNews</p>--%>
+    <%--<p class="userName-msg">Hello, ${login}</p>--%>
 </div>
 
 <div class="content-wrap">

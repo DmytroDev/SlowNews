@@ -36,4 +36,15 @@ public class UsersContainer {
         return instance;
     }
 
+    public boolean contains(String userName){
+        boolean result = false;
+        for (User user : userList) {
+            if (userName.equalsIgnoreCase(user.getLogin())){
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
 }

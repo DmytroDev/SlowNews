@@ -18,12 +18,17 @@ import java.util.List;
 // forward from login jsp
 @WebServlet("/news")
 public class NewsServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
+    @Override
+    public void init() throws ServletException {
         NewsCreationHelper helper = new NewsCreationHelper();
         List<News> newsList = helper.createNewsList();
-        req.setAttribute("newsList", newsList);
+        this.getServletContext().setAttribute("newsList", newsList);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");
         dispatcher.forward(req, resp);
@@ -35,11 +40,35 @@ public class NewsServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         List <User> users = UsersContainer.getUsersContainer().getUserList();
-        if (UsersContainer.getUsersContainer().contains(username)) {
+
+        RequestDispatcher dispatcher = null;
+        if ( isCredentialsValid(username, password, users) ) {
             HttpSession session = req.getSession();
-            session.setAttribute("login", username);
+            //session.removeAttribute();
+            session.setAttribute("username", username);
+            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");
+            dispatcher.forward(req,resp);
+        } else {
+            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
+            req.setAttribute("isValid", "false");
+            dispatcher.forward(req,resp);
         }
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");
-        dispatcher.forward(req,resp);
     }
+
+    private boolean isCredentialsValid(String login, String password, List <User> users){
+        if ( (login == "") || (password == "") ) {
+            return false;
+        }
+        boolean isValid = false;
+        for (User user : users) {
+            if ( login.equals(user.getLogin()) ){
+                if (password.equals(user.getPassword())){
+                    isValid = true;
+                    return isValid;
+                }
+            }
+        }
+        return isValid;
+    }
+
 }

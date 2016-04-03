@@ -7,36 +7,36 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/registration.css">
 </head>
 <body>
-
-<div class="header">
-    <p class="header-msg">SlowNews</p>
-</div>
+<%@include file="global/header.jsp"%>
 
 <div class="content-wrap">
 
     <div class="content-registration">
         <form action="/show" method="POST">
             <h1>Registration</h1>
-            UserName
-            <input class="username" type="text" name="username">
-            Password
-            <input class="password" type="password" name="password">
-            Confirm password
-            <input class="confirm-password" type="password" name="confirm-password"><br>
-            <input type="submit" value="Ok">
+            <p>
+                UserName<input class="username" type="text" name="username">
+            </p>
+            <p>
+                Password<input class="password" type="password" name="password">
+            </p>
+            <p>
+                Confirm password<input class="confirm-password" type="password" name="confirm-password">
+            </p>
+            <p>
+                <input class="confirm-registration-button" type="submit" value="Ok">
+            </p>
+
         </form>
     </div>
 
     <c:if test="${error==true}">
         <div class="error">
-            <h2>Your password empty or incorrect!</h2>
+            <h2 class="error">Your registration data are empty or incorrect!</h2>
         </div>
     </c:if>
 </div>
 
-<div class="footer">
-    <p> Copyright: "Infinity, inc.", 2016</p>
-</div>
-
+<%@include file="global/footer.jsp"%>
 </body>
 </html>

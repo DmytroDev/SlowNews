@@ -16,8 +16,15 @@ In servlet realize 2 method for handling GET and POST request.
 
 create handler for registration form.
 
-// TODO: need create later:
- header.jsp,
- footer.jsp,
- left-side-menu
-  and include it into pages.
+
+Part 3
+0. Доделать логин/logout.
+
+1.  регистрацию так чтобы хранилась HashSumm пароля, на основе SHA.
+
+2. Написать генератор новостей:
+ класс с методом getNews (случайные заголовок + текст)
+
+3. Реализовать архивацию
+
+

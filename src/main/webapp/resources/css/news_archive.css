@@ -43,5 +43,17 @@
 }
 
 .save-button {
+    background: lightgray;
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    margin: 3px;
+}
 
+.save-button:hover {
+    background: darkgray;
+}
+
+.save-button:active {
+    background: lightgray;
 }

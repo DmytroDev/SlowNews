@@ -1,24 +1,47 @@
 .header {
-    background: lightsalmon;
+    background: #F94529;
     top: 0;
     width: 100%;
     height: 50px;
-    line-height: 50px; /*centered line by vertically */
     margin: 0;
 }
 
-.header-msg {
-    text-align: left;
-    text-indent: 20px;  /*indent from left range*/
-    font-weight: bold;
-    color: darkblue;
+.header-left-part {
+    float: left;
+    margin: 2px 1px 2px 20px;
+    width: 45px;
+    height: 46px;
+    overflow: hidden;
+    border: #F94529;
 }
 
-.userName-msg {
-    text-align: right;
-    text-indent: 20px;
+.header-right-part {
+    float: right;
+    margin: 0 20px 0;
     font-weight: bold;
-    color: darkblue;
+    color: black;
+    line-height: 50px; /*centered line by vertically */
+}
+
+.logout-button {
+    float: right;
+    margin: 10px;
+    top: 20px;
+    right: 40px;
+    height: 30px;
+    width: 100px;
+    background: lightgray;
+    border: 2px solid darkgray;
+    font-weight: bold;
+}
+
+/* change color when we push button or stay cursor over the element */
+.logout-button:hover {
+    background: darkgray;
+}
+
+.logout-button:active {
+    background: lightgray;
 }
 
 .body {
@@ -35,15 +58,28 @@
     background: lightgray;
 }
 
+.ref-from-menu {
+    color: black;
+    text-decoration: none;
+}
+
+/* change settings when move cursor under element */
+.ref-from-menu:hover {
+    color: coral;
+}
+
+li.menu-item {
+    margin: 5px 5px 10px;
+}
+
 .footer {
     bottom:0;
     width:100%;
     height:50px;
     line-height: 50px;
-    background: lightsalmon;
+    background: #F94529;
     text-align: center;
     font-weight: bold;
-    color: darkblue;
+    color: dimgray;
     margin: 0 auto;
-
 }

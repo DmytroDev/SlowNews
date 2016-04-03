@@ -8,40 +8,23 @@
 </head>
 <body>
 
-<div class="header">
-    <p class="header-msg">SlowNews</p>
-</div>
+<%@include file="global/header.jsp"%>
 
 <div class="content-wrap">
 
-    <div class="left-menu">
-        <ol class="list">
-            <li class="news-item">
-                <a href="/news">News</a>
-            </li>
-            <li class="archive-item">
-                <a href="/archive">Archive</a>
-            </li>
-            <li class="archive-item">
-                <a href="/show">Show users</a>
-            </li>
-
-        </ol>
-    </div>
+    <%@include file="global/left-side-menu.jsp"%>
     <div class="users-content">
         <h2>List of users:</h2>
         <ol>
             <c:forEach items="${users}" var="user">
                 <li>
-                    <p>${user.login}</p>
+                    <p class="user-item">${user.login}</p>
                 </li>
             </c:forEach>
         </ol>
     </div>
 </div>
 
-<div class="footer">
-    <p> Copyright: "Infinity, inc.", 2016</p>
-</div>
+<%@include file="global/footer.jsp"%>
 </body>
 </html>

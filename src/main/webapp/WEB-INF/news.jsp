@@ -5,32 +5,15 @@
 <head>
     <title>News</title>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/news.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/news_archive.css">
 </head>
 <body>
-<div class="header">
-    <div class="left-header">SlowNews</div>
-    <div class="right-header">Hello, ${login}</div>
-    <%--<p class="header-msg">SlowNews</p>--%>
-    <%--<p class="userName-msg">Hello, ${login}</p>--%>
-</div>
+
+<%@include file="global/header.jsp"%>
 
 <div class="content-wrap">
-
-    <div class="left-menu">
-        <ul class="list">
-            <li class="news-item">
-                <a href="/news">News</a>
-            </li>
-            <li class="archive-item">
-                <a href="/archive">Archive</a>
-            </li>
-            <li class="archive-item">
-                <a href="/show">Show users</a>
-            </li>
-
-        </ul>
-    </div>
+    
+    <%@include file="global/left-side-menu.jsp"%>
     <div class="content">
         <c:forEach items="${newsList}" var="news">
             <div class="content-concrete-news">
@@ -45,8 +28,8 @@
                     <div class="news-data">
                         <p>${news.description}</p>
                     </div>
-                    <div class="save-button">
-                        <button>Add to archive</button>
+                    <div>
+                        <button class="save-button">Add to archive</button>
                     </div>
 
                 </div>
@@ -56,9 +39,6 @@
 
 </div>
 
-<div class="footer">
-    <p> Copyright: "Infinity, inc.", 2016</p>
-</div>
-
+<%@include file="global/footer.jsp"%>
 </body>
 </html>

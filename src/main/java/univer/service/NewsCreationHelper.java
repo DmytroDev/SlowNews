@@ -21,12 +21,16 @@ public class NewsCreationHelper {
             "The film was released in North America on July 24, 2009 by Columbia Pictures.";
 
     // simply stub
-    public List<News> createNewsList() throws IOException {
-        List<News> newsList = new ArrayList<News>();
-        newsList.add(new News("300 Spartans", "resources/images/300.jpg", data1));
-        newsList.add(new News("The Green Beautiful", "resources/images/green.jpg", data2));
-        newsList.add(new News("The Ugly Truth", "resources/images/truth.jpg", data3));
-
+    public List<News> createNewsList() {
+        List<News> newsList = null;
+        try {
+            newsList = new ArrayList<News>();
+            newsList.add(new News("300 Spartans", "resources/images/300.jpg", data1));
+            newsList.add(new News("The Green Beautiful", "resources/images/green.jpg", data2));
+            newsList.add(new News("The Ugly Truth", "resources/images/truth.jpg", data3));
+        } catch (IOException ex){
+            ex.printStackTrace();
+        }
         return newsList;
     }
 

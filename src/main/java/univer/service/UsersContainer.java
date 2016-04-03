@@ -17,6 +17,7 @@ public class UsersContainer {
         userList.add(new User("admin", "admin"));
         userList.add(new User("user1", "user1"));
         userList.add(new User("incognito", "1"));
+        userList.add(new User("1", "1"));
         return userList;
     }
 

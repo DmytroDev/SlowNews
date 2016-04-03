@@ -2,7 +2,7 @@ package univer.controller;
 
 import univer.model.News;
 import univer.model.User;
-import univer.service.NewsCreationHelper;
+import univer.service.NewsGenerator;
 import univer.service.UsersContainer;
 
 import javax.servlet.RequestDispatcher;
@@ -22,9 +22,12 @@ public class NewsServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        NewsCreationHelper helper = new NewsCreationHelper();
-        List<News> newsList = helper.createNewsList();
+        List<News> newsList = new NewsGenerator().createNewsList();
         this.getServletContext().setAttribute("newsList", newsList);
+
+/*        NewsCreationHelper helper = new NewsCreationHelper();
+        List<News> newsList = helper.createNewsList();
+        this.getServletContext().setAttribute("newsList", newsList);*/
     }
 
     @Override
@@ -44,7 +47,6 @@ public class NewsServlet extends HttpServlet {
         RequestDispatcher dispatcher = null;
         if ( isCredentialsValid(username, password, users) ) {
             HttpSession session = req.getSession();
-            //session.removeAttribute();
             session.setAttribute("username", username);
             dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");
             dispatcher.forward(req,resp);

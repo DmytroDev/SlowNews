@@ -14,6 +14,7 @@ public class ArchiveServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/archive.jsp");
         dispatcher.forward(req, resp);
     }

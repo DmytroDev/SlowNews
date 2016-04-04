@@ -24,10 +24,6 @@ public class NewsServlet extends HttpServlet {
     public void init() throws ServletException {
         List<News> newsList = new NewsGenerator().createNewsList();
         this.getServletContext().setAttribute("newsList", newsList);
-
-/*        NewsCreationHelper helper = new NewsCreationHelper();
-        List<News> newsList = helper.createNewsList();
-        this.getServletContext().setAttribute("newsList", newsList);*/
     }
 
     @Override

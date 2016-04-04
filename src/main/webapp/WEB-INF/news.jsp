@@ -9,11 +9,11 @@
 </head>
 <body>
 
-<%@include file="global/header.jsp"%>
+<%@include file="global/header.jsp" %>
 
 <div class="content-wrap">
-    
-    <%@include file="global/left-side-menu.jsp"%>
+
+    <%@include file="global/left-side-menu.jsp" %>
     <div class="content">
         <c:forEach items="${newsList}" var="news">
             <div class="content-concrete-news">
@@ -28,10 +28,14 @@
                     <div class="news-data">
                         <p>${news.description}</p>
                     </div>
-                    <div>
-                        <button class="save-button">Add to archive</button>
-                    </div>
-
+                    <c:if test="${username!=guest}">
+                        <form action="/archive" class="form-add-archive" method="post">
+                            <input type="hidden" name="imagePath" value="${news.imagePath}">
+                            <input type="hidden" name="title" value="${news.title}">
+                            <input type="hidden" name="description" value="${news.description}">
+                            <button class="save-button">Add to archive</button>
+                        </form>
+                    </c:if>
                 </div>
             </div>
         </c:forEach>
@@ -39,6 +43,6 @@
 
 </div>
 
-<%@include file="global/footer.jsp"%>
+<%@include file="global/footer.jsp" %>
 </body>
 </html>

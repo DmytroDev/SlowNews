@@ -12,7 +12,7 @@
 
     <%@include file="global/left-side-menu.jsp"%>
     <div class="content">
-        <c:forEach items="${newsList}" var="news">
+        <c:forEach items="${archiveList}" var="news">
             <div class="content-concrete-news">
 
                 <div class="image-content">
@@ -25,10 +25,6 @@
                     <div class="news-data">
                         <p>${news.description}</p>
                     </div>
-                    <div>
-                        <button class="save-button">Add to archive</button>
-                    </div>
-
                 </div>
             </div>
         </c:forEach>

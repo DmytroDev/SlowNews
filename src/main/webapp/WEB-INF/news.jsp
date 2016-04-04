@@ -29,7 +29,7 @@
                         <p>${news.description}</p>
                     </div>
                     <c:if test="${username!=guest}">
-                        <form action="/archive" class="form-add-archive" method="post">
+                        <form action="/news" class="form-add-archive" method="post">
                             <input type="hidden" name="imagePath" value="${news.imagePath}">
                             <input type="hidden" name="title" value="${news.title}">
                             <input type="hidden" name="description" value="${news.description}">

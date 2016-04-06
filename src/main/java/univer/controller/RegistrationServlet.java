@@ -1,5 +1,6 @@
 package univer.controller;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import univer.model.User;
 import univer.service.UsersContainer;
 
@@ -31,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
         if ( (!"".equals(username)) && (!"".equals(password)) && (!"".equals(confirmPassw)) && (password.equals(confirmPassw))) {
             UsersContainer usersContainer = UsersContainer.getUsersContainer();
             List<User> users = usersContainer.getUserList();
-            users.add(new User(username, password));
+            users.add(new User(username, DigestUtils.sha256Hex(password)));
             req.setAttribute("users", users);
             req.getSession().setAttribute("username", username);
             dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");

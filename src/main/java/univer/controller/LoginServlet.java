@@ -1,5 +1,6 @@
 package univer.controller;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import univer.model.News;
 import univer.model.User;
 import univer.service.NewsGenerator;
@@ -60,8 +61,7 @@ public class LoginServlet extends HttpServlet {
         boolean isValid = false;
         for (User user : users) {
             if ( login.equals(user.getLogin()) ){
-                if (password.equals(user.getPassword())){
-                //if (DigestUtils.sha256(password).equals(user.getPassword())){
+                if (DigestUtils.sha256Hex(password).equals(user.getPassword())){
                     isValid = true;
                     return isValid;
                 }

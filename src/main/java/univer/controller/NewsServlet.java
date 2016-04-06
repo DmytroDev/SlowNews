@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-// forward from login jsp
 @WebServlet("/news")
 public class NewsServlet extends HttpServlet {
 

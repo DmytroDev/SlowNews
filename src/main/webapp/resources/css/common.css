@@ -15,11 +15,19 @@
     border: #F94529;
 }
 
+.weather {
+    float: left;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    line-height: 50px; /*centered line by vertically */
+}
+
 .header-right-part {
     float: right;
     margin: 0 20px 0;
     font-weight: bold;
-    color: black;
+    color: white;
     line-height: 50px; /*centered line by vertically */
 }
 
@@ -81,6 +89,6 @@ li.menu-item {
     background: #F94529;
     text-align: center;
     font-weight: bold;
-    color: dimgray;
+    color: white;
     margin: 0 auto;
 }

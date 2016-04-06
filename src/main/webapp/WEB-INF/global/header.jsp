@@ -3,6 +3,9 @@
 
 <div class="header">
     <img class="header-left-part" src="../resources/images/logo1.jpg" alt="logo">
+    <div class="weather">
+        ${timezone}: temperature: ${temperature} °C, summary: ${summary}
+    </div>
     <div>
         <input class="logout-button" type="button" value="log out" onclick="window.location='/logout'">
     </div>

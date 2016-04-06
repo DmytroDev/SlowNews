@@ -5,6 +5,7 @@ import univer.model.News;
 import univer.model.User;
 import univer.service.NewsGenerator;
 import univer.service.UsersContainer;
+import univer.service.WeatherProvider;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,9 +28,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         HttpSession session = req.getSession();
         session.setAttribute("username", "guest");
+        WeatherProvider provider = new WeatherProvider();
+        session.setAttribute("timezone", provider.getTimezone());
+        session.setAttribute("temperature", provider.getTemperature());
+        session.setAttribute("summary", provider.getSummary());
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
         dispatcher.forward(req, resp);
     }

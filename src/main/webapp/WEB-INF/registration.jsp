@@ -12,7 +12,7 @@
 <div class="content-wrap">
 
     <div class="content-registration">
-        <form action="/show" method="POST">
+        <form action="/registration" method="POST">
             <h1>Registration</h1>
             <p>
                 UserName<input class="username" type="text" name="username">

@@ -61,6 +61,7 @@ public class LoginServlet extends HttpServlet {
         for (User user : users) {
             if ( login.equals(user.getLogin()) ){
                 if (password.equals(user.getPassword())){
+                //if (DigestUtils.sha256(password).equals(user.getPassword())){
                     isValid = true;
                     return isValid;
                 }

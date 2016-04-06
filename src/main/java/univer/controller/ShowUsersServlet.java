@@ -25,27 +25,4 @@ public class ShowUsersServlet extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
-        String confirmPassw = req.getParameter("confirm-password");
-        RequestDispatcher dispatcher = null;
-
-        if ( (!"".equals(username)) && (!"".equals(password)) && (!"".equals(confirmPassw)) && (password.equals(confirmPassw))) {
-            UsersContainer usersContainer = UsersContainer.getUsersContainer();
-            List<User> users = usersContainer.getUserList();
-            users.add(new User(username, password));
-            req.setAttribute("users", users);
-            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/show-users.jsp");
-            dispatcher.forward(req, resp);
-        } else {
-            req.setAttribute("error", "true");
-            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/registration.jsp");
-            dispatcher.forward(req, resp);
-
-        }
-    }
-
 }

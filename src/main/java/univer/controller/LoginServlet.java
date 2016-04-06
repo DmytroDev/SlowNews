@@ -1,9 +1,9 @@
 package univer.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import univer.model.News;
+import univer.model.Feed;
 import univer.model.User;
-import univer.service.NewsGenerator;
+import univer.service.NewsGeneratorRSS;
 import univer.service.UsersContainer;
 import univer.service.WeatherProvider;
 
@@ -22,8 +22,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        List<News> newsList = new NewsGenerator().createNewsList();
-        this.getServletContext().setAttribute("newsList", newsList);
+        List <Feed> feeds = new NewsGeneratorRSS().createNewsList();
+        this.getServletContext().setAttribute("newsList", feeds);
+/*        List<News> newsList = new NewsGenerator().createNewsList();
+        this.getServletContext().setAttribute("newsList", newsList);*/
     }
 
     @Override

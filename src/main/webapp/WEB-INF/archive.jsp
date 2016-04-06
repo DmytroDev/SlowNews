@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Archive</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/news_archive.css">
 </head>

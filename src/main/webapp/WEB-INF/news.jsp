@@ -20,8 +20,8 @@
             <div class="content-concrete-news">
 
                 <div class="image-content">
-                    <%--<img class="news-picture" src="${news.imagePath}" alt="Image">--%>
-                    <img class="news-picture" src="/resources/images/1.jpg" alt="Image">
+                    <img class="news-picture" src="${news.enclosure.url}" alt="Image">
+                    <%--<img class="news-picture" src="/resources/images/1.jpg" alt="Image">--%>
                 </div>
                 <div class="news-content">
                     <div class="news-title">
@@ -33,7 +33,7 @@
                     <c:if test="${username!=guest}">
                         <form action="/news" class="form-add-archive" method="post">
                             <%--<input type="hidden" name="imagePath" value="${news.imagePath}">--%>
-                            <input type="hidden" name="imagePath" value="/resources/images/1.jpg">
+                            <input type="hidden" name="imagePath" value="${news.enclosure.url}">
                             <input type="hidden" name="title" value="${news.title}">
                             <input type="hidden" name="description" value="${news.description}">
                             <button class="save-button">Add to archive</button>

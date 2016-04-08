@@ -1,5 +1,5 @@
 $(function(){
-    $(".temp-button").click(function(){
+    $(".hello-button").click(function(){
         console.log('Hello!');
     });
 });

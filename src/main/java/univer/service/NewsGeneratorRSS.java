@@ -16,7 +16,8 @@ public class NewsGeneratorRSS {
         try {
             feedsStore = (FeedsStore) JAXBContext.newInstance(FeedsStore.class)
                     .createUnmarshaller().unmarshal(
-                            new URL("http://static.feed.rbc.ru/rbc/internal/rss.rbc.ru/rbcdaily.ru/last.rss"));
+                            //new URL("http://static.feed.rbc.ru/rbc/internal/rss.rbc.ru/rbcdaily.ru/last.rss"));
+                            new URL("http://learningenglish.voanews.com/api/zv$qqreotoqr"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (JAXBException e) {

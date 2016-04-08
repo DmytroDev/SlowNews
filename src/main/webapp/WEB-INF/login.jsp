@@ -24,7 +24,7 @@
                 <input class="confirm-login-button" type="submit" value="Log in">
             </p>
         </form>
-        <button class="temp-button">Temp</button>
+        <button class="hello-button">Say Hello! (console)</button>
         <div>
             <a class="skip-authentication" href="/news">Skip authentication</a>
             <a class="new-user" href="/registration">I'm new user</a>

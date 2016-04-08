@@ -21,7 +21,7 @@ public class NewsGenerator {
         List<News> newsList = new ArrayList<News>();
         try {
             for (int i = 0; i < 10; i++) {
-                newsList.add(new News(generateTitle(), generateImagePath(), generateDescription()));
+                newsList.add(new News(generateTitle(),  generateDescription(), generateImagePath()));
             }
         } catch (IOException e) {
             e.printStackTrace();

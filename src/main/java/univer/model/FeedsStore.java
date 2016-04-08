@@ -32,8 +32,8 @@ public class FeedsStore {
         return instance;
     }
 
-    public void addNews(String title, String body) {
-        newsList.add(new Feed(title, body));
+    public void addNews(String title, String body, Enclosure enclosure) {
+        newsList.add(new Feed(title, body, enclosure));
     }
 
     public List<Feed> getNewsList() {

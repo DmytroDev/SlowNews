@@ -11,13 +11,15 @@ public class Feed {
 
     private String title;
     private String description;
+    private Enclosure enclosure;
 
     public Feed() {
     }
 
-    public Feed(String title, String description) {
+    public Feed(String title, String description, Enclosure enclosure) {
         this.title = title;
         this.description = description;
+        this.enclosure = enclosure;
     }
 
     public String getTitle() {
@@ -36,11 +38,20 @@ public class Feed {
         this.description = description;
     }
 
+    public Enclosure getEnclosure() {
+        return enclosure;
+    }
+
+    public void setEnclosure(Enclosure enclosure) {
+        this.enclosure = enclosure;
+    }
+
     @Override
     public String toString() {
-        return "FeedNews{" +
+        return "Feed{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", enclosure=" + enclosure.getUrl() +
                 '}';
     }
 }

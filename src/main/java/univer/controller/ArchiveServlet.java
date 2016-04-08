@@ -21,7 +21,6 @@ public class ArchiveServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String userName = (String)session.getAttribute("username");
         ArchiveContainer archiveContainer = ArchiveContainer.createArchiveContainer();
-
         List<News> archiveList = archiveContainer.getUsersArchiveList(userName);
         req.setAttribute("archiveList", archiveList);
 

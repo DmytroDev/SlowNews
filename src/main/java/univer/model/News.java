@@ -4,16 +4,16 @@ import java.io.IOException;
 
 public class News {
     private String title;
-    private String imagePath;
     private String description; // Content with news
+    private String imagePath;
 
     public News() {
     }
 
-    public News(String title, String imagePath, String description) throws IOException {
+    public News(String title, String description, String imagePath) throws IOException {
         this.title = title;
-        this.imagePath = imagePath;
         this.description = description;
+        this.imagePath = imagePath;
     }
 
     public String getTitle() {

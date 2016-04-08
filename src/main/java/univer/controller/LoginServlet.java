@@ -24,6 +24,10 @@ public class LoginServlet extends HttpServlet {
     public void init() throws ServletException {
         List <Feed> feeds = new NewsGeneratorRSS().createNewsList();
         this.getServletContext().setAttribute("newsList", feeds);
+        WeatherProvider provider = new WeatherProvider();
+        this.getServletContext().setAttribute("timezone", provider.getTimezone());
+        this.getServletContext().setAttribute("temperature", provider.getTemperature());
+        this.getServletContext().setAttribute("summary", provider.getSummary());
 /*        List<News> newsList = new NewsGenerator().createNewsList();
         this.getServletContext().setAttribute("newsList", newsList);*/
     }
@@ -32,10 +36,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         session.setAttribute("username", "guest");
-        WeatherProvider provider = new WeatherProvider();
-        session.setAttribute("timezone", provider.getTimezone());
-        session.setAttribute("temperature", provider.getTemperature());
-        session.setAttribute("summary", provider.getSummary());
+
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/login.jsp");
         dispatcher.forward(req, resp);

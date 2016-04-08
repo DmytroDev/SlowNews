@@ -36,21 +36,8 @@ public class FeedsStore {
         newsList.add(new Feed(title, body));
     }
 
-/*    public void addNews(Feed feed) {
-        newsList.add(0, feed);
-    }*/
-
     public List<Feed> getNewsList() {
         return newsList;
-    }
-
-    public Feed findByTitle(String title) {
-        for(Feed concreteFeed : newsList) {
-            if(concreteFeed.getTitle().equals(title)) {
-                return concreteFeed;
-            }
-        }
-        return null;
     }
 
 }

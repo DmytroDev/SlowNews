@@ -7,6 +7,10 @@
     border: 1px solid #C8C5BA;
 }
 
+.temp-button {
+
+}
+
 .username, .password {
     float: right;
     margin-right: 10px;

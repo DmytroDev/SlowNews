@@ -1,3 +1,5 @@
-/**
- * Created by Tanya on 4/6/2016.
- */
+$(function(){
+    $(".temp-button").click(function(){
+        console.log('Hello!');
+    });
+});

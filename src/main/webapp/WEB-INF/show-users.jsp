@@ -5,6 +5,7 @@
     <title>Users</title>
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/show-users.css">
+
 </head>
 <body>
 
@@ -26,5 +27,7 @@
 </div>
 
 <%@include file="global/footer.jsp"%>
+<script src="../resources/lib/jquery-2.2.3.js"></script>
+<script src="../resources/js/show-users.js"></script>
 </body>
 </html>

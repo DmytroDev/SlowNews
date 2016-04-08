@@ -24,6 +24,7 @@
                 <input class="confirm-login-button" type="submit" value="Log in">
             </p>
         </form>
+        <button class="temp-button">Temp</button>
         <div>
             <a class="skip-authentication" href="/news">Skip authentication</a>
             <a class="new-user" href="/registration">I'm new user</a>
@@ -40,5 +41,7 @@
 </div>
 
 <%@include file="global/footer.jsp" %>
+<script src="../resources/lib/jquery-2.2.3.js"></script>
+<script src="../resources/js/login.js"></script>
 </body>
 </html>

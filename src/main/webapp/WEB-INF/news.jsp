@@ -21,18 +21,16 @@
 
                 <div class="image-content">
                     <img class="news-picture" src="${news.enclosure.url}" alt="Image">
-                    <%--<img class="news-picture" src="/resources/images/1.jpg" alt="Image">--%>
                 </div>
                 <div class="news-content">
                     <div class="news-title">
                         <h2>${news.title}</h2>
                     </div>
                     <div class="news-data">
-                        <p>${news.description}</p>
+                        <p class="news">${news.description}</p>
                     </div>
                     <c:if test="${username!=guest}">
                         <form action="/news" class="form-add-archive" method="post">
-                            <%--<input type="hidden" name="imagePath" value="${news.imagePath}">--%>
                             <input type="hidden" name="imagePath" value="${news.enclosure.url}">
                             <input type="hidden" name="title" value="${news.title}">
                             <input type="hidden" name="description" value="${news.description}">
@@ -47,5 +45,7 @@
 </div>
 
 <%@include file="global/footer.jsp" %>
+<script src="../resources/lib/jquery-2.2.3.js"></script>
+<script src="../resources/js/search-text.js"></script>
 </body>
 </html>

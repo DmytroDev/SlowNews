@@ -58,6 +58,7 @@
 }
 
 .left-menu {
+
     padding: 5px;
     margin: 5px;
     width: 200px;
@@ -75,10 +76,53 @@
 /* change settings when move cursor under element */
 .ref-from-menu:hover {
     color: coral;
+    cursor: pointer;  /* change cursor to hand */
 }
 
 li.menu-item {
     margin: 5px 5px 10px;
+}
+
+.big-letter {
+    color: red;
+    font-size: 130%; /* Размер шрифта в процентах */
+    font-family: serif; /* Шрифт с засечками */
+    position: relative;
+}
+
+.search-box {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    margin: 50px auto 20px;
+    overflow: hidden;
+}
+
+.search-field,
+.submit-button {
+    float: left;
+}
+
+.search-field {
+    padding: 5px 9px;
+    height: 23px;
+    width: inherit;
+    font: normal 13px 'trebuchet MS', arial, helvetica;
+    background: #f1f1f1;
+}
+
+.submit-button {
+    background-color: darkgrey;
+    height: 35px;
+    margin: 10px 0 0 30px;
+    width: 90px;
+    cursor: pointer;
+    font: bold 14px Arial, Helvetica;
+    color: #23441e;
+}
+
+.submit-button:hover {
+    background-color: lightslategrey;
 }
 
 .footer {

@@ -27,7 +27,7 @@
                         <h2>${news.title}</h2>
                     </div>
                     <div class="news-data">
-                        <p>${news.description}</p>
+                        <p class="news">${news.description}</p>
                     </div>
                 </div>
             </div>
@@ -37,5 +37,7 @@
 </div>
 
 <%@include file="global/footer.jsp"%>
+<script src="../resources/lib/jquery-2.2.3.js"></script>
+<script src="../resources/js/search-text.js"></script>
 </body>
 </html>

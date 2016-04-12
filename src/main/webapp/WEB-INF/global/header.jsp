@@ -3,7 +3,7 @@
 
 <div class="header">
     <img class="header-left-part" src="../resources/images/logo1.jpg" alt="logo">
-    <div class="weather">
+    <div id="temp-weather" class="weather">
         ${timezone}: temperature: ${temperature} °C, summary: ${summary}
     </div>
     <div>

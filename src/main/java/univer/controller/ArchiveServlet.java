@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/archive")
+@WebServlet("/view/archive")
 public class ArchiveServlet extends HttpServlet {
 
     @Override

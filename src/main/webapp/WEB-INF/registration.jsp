@@ -1,18 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Registration</title>
-    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/registration.css">
-</head>
-<body>
-<%@include file="global/header.jsp"%>
 
+<c:import url="global/header.jsp"/>
 <div class="content-wrap">
 
     <div class="content-registration">
-        <form action="/registration" method="POST">
+        <form id="registration-user-form" action="/registration" method="POST">
             <h1>Registration</h1>
             <p>
                 UserName<input class="username" type="text" name="username">
@@ -37,6 +30,3 @@
     </c:if>
 </div>
 
-<%@include file="global/footer.jsp"%>
-</body>
-</html>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/news")
+@WebServlet("/view/news")
 public class NewsServlet extends HttpServlet {
 
     @Override
@@ -26,7 +26,7 @@ public class NewsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String title = req.getParameter("title");
         String description = (req.getParameter("description")).trim();
-        description = (description.length() > 500) ? description.substring(0, 500) + " ..." : description;
+        description = (description.length() > 1000) ? description.substring(0, 1000) + " ..." : description;
 
         String imagePath = req.getParameter("imagePath");
 
@@ -34,7 +34,7 @@ public class NewsServlet extends HttpServlet {
         String userName = (String) session.getAttribute("username");
         ArchiveContainer archiveContainer = ArchiveContainer.createArchiveContainer();
         archiveContainer.addToArchive(userName, new News(title, description, imagePath));
-        resp.sendRedirect("/news");
+        resp.sendRedirect("/view/news");
     }
 
 }

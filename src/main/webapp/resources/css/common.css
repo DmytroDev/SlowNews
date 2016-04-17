@@ -31,7 +31,7 @@
     line-height: 50px; /*centered line by vertically */
 }
 
-.logout-button {
+#logout-button {
     float: right;
     margin: 10px;
     top: 20px;
@@ -44,12 +44,18 @@
 }
 
 /* change color when we push button or stay cursor over the element */
-.logout-button:hover {
+#logout-button:hover {
     background: darkgray;
 }
 
-.logout-button:active {
+#logout-button:active {
     background: lightgray;
+}
+
+.audio-block {
+    float: right;
+    margin: 10px 50px 10px;
+    background-color: #F94529;
 }
 
 .body {
@@ -99,7 +105,7 @@ li.menu-item {
 }
 
 .search-field,
-.submit-button {
+#search-button {
     float: left;
 }
 
@@ -111,7 +117,7 @@ li.menu-item {
     background: #f1f1f1;
 }
 
-.submit-button {
+#search-button {
     background-color: darkgrey;
     height: 35px;
     margin: 10px 0 0 30px;
@@ -121,7 +127,7 @@ li.menu-item {
     color: #23441e;
 }
 
-.submit-button:hover {
+#search-button:hover {
     background-color: lightslategrey;
 }
 
@@ -135,4 +141,221 @@ li.menu-item {
     font-weight: bold;
     color: white;
     margin: 0 auto;
+}
+
+.loading{
+    text-align: center;
+    height: 85%;
+}
+
+.content-login {
+    width: 400px;
+    height: 330px;
+    margin: 10px 0 10px 0;
+    text-indent: 20px;
+    background: lightgreen;
+    color: darkblue;
+    border: 1px solid #C8C5BA;
+}
+
+#update-button {
+    margin: 5px 5px 5px 120px;
+    background: lightgray;
+}
+
+#update-button:hover {
+    color: darkgray;
+}
+
+#update-button:active {
+    color: lightgray;
+}
+
+.username, .password {
+    float: right;
+    margin-right: 10px;
+}
+
+#confirm-login-button {
+    background: lightgray;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin: 5px 5px 5px 120px;
+}
+
+#confirm-login-button:hover {
+    color: darkgray;
+}
+
+#confirm-login-button:active {
+    color: lightgray;
+}
+
+#skip-authentication {
+    float: left;
+    margin: 20px 2px;
+    text-decoration: none;
+}
+
+#skip-authentication:hover {
+    color: coral;
+}
+
+#new-user {
+    float: right;
+    margin: 20px 20px 2px;
+    text-decoration: none;
+    border: none;
+}
+
+#new-user:hover {
+    color: coral;
+}
+
+.not-valid-credentials {
+    margin: 10px 0 50px 0;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+.not-valid-msg {
+    text-align: center;
+    background: darkgray;
+    color: crimson;
+    font-weight: bold;
+}
+
+.content-wrap {
+    left: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    width: 80%;
+    padding: 5px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.content-concrete-news{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin: 10px;
+    border-bottom: solid 1px darkgray;
+}
+
+.image-content {
+    width: 15%;
+}
+
+.news-picture {
+    width: 100px;
+    height: 100px;
+}
+
+.news-content {
+    width: 80%;
+    text-align: left;
+}
+
+.news-data {
+
+}
+
+#add-archive-button {
+    background: lightgray;
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    margin: 3px;
+}
+
+#add-archive-button:hover {
+    background: darkgray;
+}
+
+#add-archive-button:active {
+    background: lightgray;
+}
+
+span.temp {
+    text-decoration:underline;
+    background: yellow;
+}
+
+.content-registration {
+    width: 400px;
+    height: 300px;
+    margin: 10px 0 10px 0;
+    text-indent: 20px;
+    background: lightgreen;
+    color: darkblue;
+    border: 1px solid #C8C5BA;
+}
+
+.username,.password,.confirm-password {
+    float: right;
+    margin-right: 10px;
+}
+
+.confirm-registration-button {
+    background: lightgray;
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    margin: 5px 5px 5px 120px;
+}
+
+.confirm-registration-button:hover {
+    background: darkgray;
+}
+
+.confirm-registration-button:active {
+    background: lightgray;
+}
+
+.error {
+    margin: 10px 0 50px 0;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+h2.error {
+    text-align: center;
+    background: darkgray;
+    color: crimson;
+    font-weight: bold;
+}
+
+.content-wrap {
+    left: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+h2 {
+    text-indent: 3%;
+}
+
+.users-content {
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.user-item:hover {
+    color: coral;
 }

@@ -1,4 +1,4 @@
-package univer.model;
+package univer.model.entity;
 
 // Stores an RSS feed
 

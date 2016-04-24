@@ -1,7 +1,7 @@
 package univer.service;
 
-import univer.model.Feed;
-import univer.model.FeedsStore;
+import univer.model.entity.Feed;
+import univer.model.entity.FeedsStore;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

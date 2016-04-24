@@ -1,7 +1,7 @@
 package univer.service;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import univer.model.User;
+import univer.model.entity.User;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class UsersContainer {
     public boolean contains(String userName){
         boolean result = false;
         for (User user : userList) {
-            if (userName.equalsIgnoreCase(user.getLogin())){
+            if (userName.equalsIgnoreCase(user.getPassword())){
                 result = true;
                 break;
             }

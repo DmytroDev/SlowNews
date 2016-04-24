@@ -1,7 +1,7 @@
 package univer.controller;
 
-import univer.model.News;
-import univer.service.ArchiveContainer;
+import univer.model.dao.NewsDAO;
+import univer.model.entity.News;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,9 +19,8 @@ public class ArchiveServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        String userName = (String)session.getAttribute("username");
-        ArchiveContainer archiveContainer = ArchiveContainer.createArchiveContainer();
-        List<News> archiveList = archiveContainer.getUsersArchiveList(userName);
+        int userID = (int) session.getAttribute("userID");
+        List<News> archiveList = new NewsDAO().getNewsListByUserID(userID);
         req.setAttribute("archiveList", archiveList);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/archive.jsp");

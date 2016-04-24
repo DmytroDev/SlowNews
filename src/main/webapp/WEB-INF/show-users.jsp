@@ -10,7 +10,7 @@
         <ol>
             <c:forEach items="${users}" var="user">
                 <li>
-                    <p class="user-item">${user.login}</p>
+                    <p class="user-item">${user.username}</p>
                 </li>
             </c:forEach>
         </ol>

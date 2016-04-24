@@ -1,7 +1,8 @@
 package univer.controller;
 
-import univer.model.News;
-import univer.service.ArchiveContainer;
+import univer.model.dao.NewsDAO;
+import univer.model.dao.UserDAO;
+import univer.model.entity.News;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,9 +32,10 @@ public class NewsServlet extends HttpServlet {
         String imagePath = req.getParameter("imagePath");
 
         HttpSession session = req.getSession();
-        String userName = (String) session.getAttribute("username");
-        ArchiveContainer archiveContainer = ArchiveContainer.createArchiveContainer();
-        archiveContainer.addToArchive(userName, new News(title, description, imagePath));
+        int userID = (int) session.getAttribute("userID");
+        News news = new News(title, description, imagePath);
+        news.setUser( new UserDAO().get(userID));
+        new NewsDAO().saveOrUpdate(news);
         resp.sendRedirect("/view/news");
     }
 

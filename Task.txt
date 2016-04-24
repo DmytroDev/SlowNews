@@ -59,3 +59,10 @@ ArchiveViewServlet “/view/archive"
 “/news” -> PageServlet
 “/abra/cadabra/hocus/pocus.html” -> PageServlet
 “/view/news” -> NewsViewServlet
+
+Part 6
+Переделать с использованием JDBC. Используем PostrgreSQL.
+
+Part 7.
+Переделать все на Hibernate.
+Использовать аннотации преимущественно из JPA.

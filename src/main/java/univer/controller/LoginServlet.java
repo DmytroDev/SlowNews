@@ -1,8 +1,8 @@
 package univer.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import univer.model.User;
-import univer.service.UsersContainer;
+import univer.model.dao.UserDAO;
+import univer.model.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,15 +30,16 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        List <User> users = UsersContainer.getUsersContainer().getUserList();
-
-        RequestDispatcher dispatcher = null;
+        List<User> users = new UserDAO().getAll();
+        HttpSession session = req.getSession();
         if ( isCredentialsValid(username, password, users) ) {
-            HttpSession session = req.getSession();
             session.setAttribute("username", username);
+            User user = new UserDAO().getUserByLoginAndPassword(username, password);
+            session.setAttribute("userID", user.getId());
+            session.setAttribute("isValid", "true");
             resp.sendRedirect("/view/news");
         } else {
-            req.setAttribute("isValid", "false");
+            session.setAttribute("isValid", "false");
             resp.sendRedirect("/view/login");
         }
     }
@@ -50,7 +51,7 @@ public class LoginServlet extends HttpServlet {
         }
         boolean isValid = false;
         for (User user : users) {
-            if ( login.equals(user.getLogin()) ){
+            if ( login.equals(user.getUsername()) ){
                 if (DigestUtils.sha256Hex(password).equals(user.getPassword())){
                     isValid = true;
                     return isValid;

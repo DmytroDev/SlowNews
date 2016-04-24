@@ -20,7 +20,7 @@
                     <div class="news-data">
                         <p class="news">${fn:trim(news.description)}</p>
                     </div>
-                    <c:if test="${username!=guest}">
+                    <c:if test="${username!='guest'}">
                         <form action="/news" id="add-to-archive-form" method="post">
                             <input type="hidden" name="imagePath" value="${news.enclosure.url}">
                             <input type="hidden" name="title" value="${news.title}">

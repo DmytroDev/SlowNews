@@ -1,7 +1,7 @@
 package univer.controller;
 
-import univer.model.User;
-import univer.service.UsersContainer;
+import univer.model.dao.UserDAO;
+import univer.model.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,8 +17,7 @@ public class ShowUsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UsersContainer usersContainer = UsersContainer.getUsersContainer();
-        List<User> users = usersContainer.getUserList();
+        List<User> users = users = new UserDAO().getAll();
         req.setAttribute("users", users);
 
         RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/WEB-INF/show-users.jsp");

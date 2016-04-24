@@ -1,6 +1,6 @@
 package univer.controller;
 
-import univer.model.Feed;
+import univer.model.entity.Feed;
 import univer.service.NewsGeneratorRSS;
 import univer.service.WeatherProvider;
 

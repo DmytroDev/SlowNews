@@ -1,8 +1,9 @@
 package univer.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import univer.model.User;
-import univer.service.UsersContainer;
+import univer.model.dao.DAOException;
+import univer.model.dao.UserDAO;
+import univer.model.entity.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/view/registration")
 public class RegistrationServlet extends HttpServlet {
@@ -30,11 +31,16 @@ public class RegistrationServlet extends HttpServlet {
         RequestDispatcher dispatcher = null;
 
         if ( (!"".equals(username)) && (!"".equals(password)) && (!"".equals(confirmPassw)) && (password.equals(confirmPassw))) {
-            UsersContainer usersContainer = UsersContainer.getUsersContainer();
-            List<User> users = usersContainer.getUserList();
-            users.add(new User(username, DigestUtils.sha256Hex(password)));
-            req.setAttribute("users", users);
-            req.getSession().setAttribute("username", username);
+            try {
+                new UserDAO().saveOrUpdate( new User(username, DigestUtils.sha256Hex(password)));
+            } catch (DAOException e) {
+                e.printStackTrace();
+            }
+            HttpSession session = req.getSession();
+            session.setAttribute("username", username);
+            User user = new UserDAO().getUserByLoginAndPassword(username, password);
+            session.setAttribute("userID", user.getId());
+            session.setAttribute("isValid", "true");
             dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/news.jsp");
             dispatcher.forward(req, resp);
         } else {

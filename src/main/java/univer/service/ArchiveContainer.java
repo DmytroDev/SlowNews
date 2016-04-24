@@ -1,6 +1,6 @@
 package univer.service;
 
-import univer.model.News;
+import univer.model.entity.News;
 
 import java.util.ArrayList;
 import java.util.HashMap;

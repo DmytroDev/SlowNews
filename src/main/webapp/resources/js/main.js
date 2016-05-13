@@ -7,7 +7,9 @@ $(function () {
 
     $(document).on("click", "#update-button", function (event) {
         $.get("/updateweather", function (responseText) {
-            document.getElementById('temp-weather').innerText = responseText;
+            //document.getElementById('temp-weather').innerText = responseText;
+            $('#temp-weather').html( responseText );
+
         });
     });
 

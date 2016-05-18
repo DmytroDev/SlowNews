@@ -1,4 +1,5 @@
 .header {
+    border-radius: 5px;
     background: #F94529;
     top: 0;
     width: 100%;
@@ -41,6 +42,7 @@
     background: lightgray;
     border: 2px solid darkgray;
     font-weight: bold;
+    border-radius: 5px;
 }
 
 /* change color when we push button or stay cursor over the element */
@@ -64,7 +66,6 @@
 }
 
 .left-menu {
-
     padding: 5px;
     margin: 5px;
     width: 200px;
@@ -72,6 +73,7 @@
     color: lightgray;
     background: lightgray;
     max-height: 300px;
+    border-radius: 5px;
 }
 
 .ref-from-menu {
@@ -107,6 +109,7 @@ li.menu-item {
 .search-field,
 #search-button {
     float: left;
+    border-radius: 5px;
 }
 
 .search-field {
@@ -141,6 +144,7 @@ li.menu-item {
     font-weight: bold;
     color: white;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .loading{
@@ -156,11 +160,13 @@ li.menu-item {
     background: lightgreen;
     color: darkblue;
     border: 1px solid #C8C5BA;
+    border-radius: 5px;
 }
 
 #update-button {
     margin: 5px 5px 5px 120px;
     background: lightgray;
+    border-radius: 5px;
 }
 
 #update-button:hover {
@@ -174,6 +180,7 @@ li.menu-item {
 .username, .password {
     float: right;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 #confirm-login-button {
@@ -182,6 +189,7 @@ li.menu-item {
     height: 40px;
     font-weight: bold;
     margin: 5px 5px 5px 120px;
+    border-radius: 5px;
 }
 
 #confirm-login-button:hover {
@@ -260,6 +268,7 @@ li.menu-item {
 .news-picture {
     width: 100px;
     height: 100px;
+    border-radius: 5px;
 }
 
 .news-content {
@@ -300,11 +309,13 @@ span.temp {
     background: lightgreen;
     color: darkblue;
     border: 1px solid #C8C5BA;
+    border-radius: 5px;
 }
 
 .username,.password,.confirm-password {
     float: right;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 .confirm-registration-button {
@@ -313,6 +324,7 @@ span.temp {
     height: 30px;
     font-weight: bold;
     margin: 5px 5px 5px 120px;
+    border-radius: 5px;
 }
 
 .confirm-registration-button:hover {
